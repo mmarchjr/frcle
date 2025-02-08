@@ -121,7 +121,7 @@ function guess(number) {
         alert(`Team ${number} has already been guessed!`);
       } else {
         alert(
-          `Team ${number} does not exist, or did not compete in the ${tba.current_season} season`
+          `Team ${number} does not exist, or did not compete in the 2024 season`
         );
       }
     }
@@ -200,10 +200,10 @@ function buildTableRow(data) {
 
 async function fetchSBData() {
   teams = await Promise.all([
-    fetch(`${SB_BASE_URL}/teams?active=true&offset=0`),
-    fetch(`${SB_BASE_URL}/teams?active=true&offset=1000`),
-    fetch(`${SB_BASE_URL}/teams?active=true&offset=2000`),
-    fetch(`${SB_BASE_URL}/teams?active=true&offset=3000`),
+    fetch(`${SB_BASE_URL}/teams/2024?active=true&offset=0`),
+    fetch(`${SB_BASE_URL}/teams/2024?active=true&offset=1000`),
+    fetch(`${SB_BASE_URL}/teams/2024?active=true&offset=2000`),
+    fetch(`${SB_BASE_URL}/teams/2024?active=true&offset=3000`),
   ]);
 
   console.log("Teams have been fetched!");
